@@ -7,4 +7,5 @@ I still haven't managed to get any sort of haskell workflow working nicely in ni
 
 in the meantime:
 `$ nix-shell -p ghc`
-`$ runhaskell src/day1.hs`
+
+`./all.sh`

@@ -1,6 +1,3 @@
-type Level = Int
-type Report = [Level]
-
 main :: IO ()
 main = do
   inp <-  lines <$> readFile "inp/day2.txt"
@@ -9,6 +6,9 @@ main = do
   print $ length . filter id $ part1 <$> reports
   putStr "Day2: Part2: "
   print $ length . filter id $ isSafe2 <$> reports
+
+type Level = Int
+type Report = [Level]
 
 data LevelDiffs = LD [Int]
 

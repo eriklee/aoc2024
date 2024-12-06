@@ -1,5 +1,5 @@
 import Data.List (sort)
-import Data.Map as M
+import qualified Data.Map as M
 
 main :: IO ()
 main = do
@@ -12,8 +12,11 @@ main = do
   print $ part2 inpL inpR
 
 parseLine :: String -> (Int, Int)
-parseLine x = let [l,r] = words x
-  in (read l, read r)
+parseLine = tuplize . take 2 . fmap read .  words 
+
+tuplize :: [Int] -> (Int,Int)
+tuplize [l,r] = (l,r)
+tuplize _ = error "Bad Input"
 
 part1 :: [Int] -> [Int] -> Int
 part1 l r = sum $ abs <$> zipWith (-) l r

@@ -1,2 +1,3 @@
-runhaskell src/day1.hs
-runhaskell src/day2.hs
+cabal run day1
+cabal run day2
+cabal run day3
